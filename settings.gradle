@@ -1,0 +1,3 @@
+rootProject.name = "MVISample"
+include ':app'
+include ':MVICore'
