@@ -6,7 +6,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-abstract class MVIViewModel<Event : UiEvent, State : UiState, Effect : UiEffect> : ViewModel() {
+abstract class Feature<Event : UiEvent, State : UiState, Effect : UiEffect> : ViewModel() {
 
     // Create Initial State of View
     private val initialState: State by lazy { createInitialState() }

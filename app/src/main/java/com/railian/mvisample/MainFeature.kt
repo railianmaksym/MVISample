@@ -2,13 +2,13 @@ package com.railian.mvisample
 
 import android.telephony.PhoneNumberUtils
 import androidx.lifecycle.viewModelScope
-import com.railian.mvicore.MVIViewModel
+import com.railian.mvicore.Feature
+import com.railian.mvicore.UiEffect
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MainViewModel :
-    MVIViewModel<MainContract.Event, MainContract.LoginState, MainContract.Effect>() {
+class MainFeature : Feature<MainContract.Event, MainContract.LoginState, UiEffect>() {
     override fun createInitialState(): MainContract.LoginState {
         return MainContract.LoginState()
     }
