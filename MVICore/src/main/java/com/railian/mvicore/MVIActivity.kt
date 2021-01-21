@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.flow.collect
 
-abstract class MVIActivity<S : UiState, E : UiEffect, F : Feature<UiEvent, S, E>>(
+abstract class MVIActivity<Event : UiEvent, State : UiState, Effect : UiEffect, F : Feature<Event, State, Effect>>(
     @LayoutRes contentLayoutId: Int
 ) : AppCompatActivity(contentLayoutId) {
 
@@ -29,9 +29,9 @@ abstract class MVIActivity<S : UiState, E : UiEffect, F : Feature<UiEvent, S, E>
 
     abstract fun onActivityCreated()
 
-    abstract fun renderState(state: S)
+    abstract fun renderState(state: State)
 
-    abstract fun reactOn(effect: E)
+    abstract fun reactOn(effect: Effect)
 
     protected fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT)

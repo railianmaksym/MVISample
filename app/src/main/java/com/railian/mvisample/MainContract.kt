@@ -5,7 +5,8 @@ import com.railian.mvicore.UiEffect
 import com.railian.mvicore.UiEvent
 import com.railian.mvicore.UiState
 
-class MainContract: Contract {
+class MainContract : Contract {
+
     // Events that user performed
     sealed class Event : UiEvent {
         data class OnPhoneAuthClicked(val phone: String) : Event()
