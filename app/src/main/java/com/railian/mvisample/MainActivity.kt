@@ -17,15 +17,15 @@ class MainActivity :
 
     override fun onActivityCreated() {
         viewBinding.materialButton.setOnClickListener {
-            feature.setEvent(MainContract.Event.OnPhoneAuthClicked(viewBinding.etPhone.text.toString()))
+            emit(MainContract.Event.OnPhoneAuthClicked(viewBinding.etPhone.text.toString()))
         }
 
         viewBinding.google.setOnClickListener {
-            feature.setEvent(MainContract.Event.OnGoogleAuthClicked)
+            emit(MainContract.Event.OnGoogleAuthClicked)
         }
 
         viewBinding.facebook.setOnClickListener {
-            feature.setEvent(MainContract.Event.OnFacebookAuthClicked)
+            emit(MainContract.Event.OnFacebookAuthClicked)
         }
     }
 
