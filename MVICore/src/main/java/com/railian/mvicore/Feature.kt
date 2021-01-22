@@ -19,7 +19,7 @@ abstract class Feature<Event : UiEvent, State : UiState, Effect : UiEffect> : Vi
     private val _uiState: MutableStateFlow<State> = MutableStateFlow(initialState)
     val uiState = _uiState.asStateFlow()
 
-    private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
+    private val _event: MutableSharedFlow<Event> = MutableSharedFlow(replay = 0)
     val event = _event.asSharedFlow()
 
     private val _effect: Channel<Effect> = Channel()
