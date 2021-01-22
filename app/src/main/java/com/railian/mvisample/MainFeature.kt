@@ -7,8 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MainFeature<Event : MainContract.Event, State : MainContract.LoginState, Effect : MainContract.Effect> :
-    Feature<MainContract.Event, MainContract.LoginState, MainContract.Effect>() {
+class MainFeature : Feature<MainContract.Event, MainContract.LoginState, MainContract.Effect>() {
 
     override fun createInitialState(): MainContract.LoginState {
         return MainContract.LoginState()

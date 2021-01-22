@@ -10,9 +10,8 @@ import com.railian.mvisample.databinding.ActivityMainBinding
 class MainActivity :
     MVIActivity<MainContract.Event, MainContract.LoginState, MainContract.Effect>(R.layout.activity_main) {
 
-    override val feature: MainFeature<MainContract.Event, MainContract.LoginState, MainContract.Effect>
+    override val feature: MainFeature
         get() = ViewModelProvider(this)[MainFeature::class.java]
-                as MainFeature<MainContract.Event, MainContract.LoginState, MainContract.Effect>
 
     private val viewBinding: ActivityMainBinding by viewBinding(R.id.content)
 
